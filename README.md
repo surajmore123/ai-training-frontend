@@ -1,16 +1,100 @@
-# training
+AI Training Module Generator – Frontend
+Overview
 
-A new Flutter project.
+This is a Flutter Web frontend for the AI Training Module Generator.
+It allows users to upload meeting notes, trigger AI processing, and browse generated training modules.
 
-## Getting Started
+What This Frontend Does
 
-This project is a starting point for a Flutter application.
+Uploads meeting notes (text or .txt file)
 
-A few resources to get you started if this is your first Flutter project:
+Shows AI processing progress
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Displays generated training topics
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Displays full training content per topic
+
+Tech Stack
+
+Flutter Web
+
+Dart
+
+BLoC (State Management)
+
+REST API integration
+
+Project Structure (Simplified)
+lib/
+ ├─ screens/
+ │   ├─ upload_screen.dart
+ │   ├─ topics_screen.dart
+ │   └─ module_screen.dart
+ ├─ bloc/
+ │   ├─ upload/
+ │   ├─ process_ai/
+ │   ├─ topics/
+ │   └─ module/
+ ├─ repository/
+ │   ├─ upload_repository.dart
+ │   ├─ process_ai_repository.dart
+ │   ├─ topics_repository.dart
+ │   └─ module_repository.dart
+ └─ main.dart
+
+Screens Overview
+Upload Screen
+
+Enter meeting title and content
+
+Upload .txt file
+
+Submit notes to backend
+
+Topics Screen
+
+Automatically triggers AI processing
+
+Displays loader during processing
+
+Shows list of generated topics
+
+Module Screen
+
+Opens on topic click
+
+Fetches and displays training content
+
+Setup Instructions
+1. Clone repository
+git clone https://github.com/YOUR_USERNAME/ai-training-frontend.git
+cd ai-training-frontend
+
+2. Install Flutter dependencies
+flutter pub get
+
+3. Run Flutter Web
+flutter run -d chrome
+
+
+Make sure backend is running before using the app.
+
+Notes
+
+Uses BLoC for clean architecture
+
+All API calls are centralized in repositories
+
+Designed for clarity and scalability
+
+Use Cases
+
+Internal dashboards
+
+Training portals
+
+Knowledge management tools
+
+License
+
+Internal / Educational use
