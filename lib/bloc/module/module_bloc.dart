@@ -19,11 +19,11 @@ class ModuleBloc extends Bloc<ModuleEvent, ModuleState> {
     emit(ModuleLoading());
 
     try {
-      debugPrint('📄 Fetching module: ${event.topic}');
+      debugPrint(' Fetching module: ${event.topic}');
 
       final data = await repository.fetchModule(event.topic);
 
-      debugPrint('✅ Module loaded');
+      debugPrint(' Module loaded');
 
       emit(
         ModuleLoaded(
@@ -32,8 +32,8 @@ class ModuleBloc extends Bloc<ModuleEvent, ModuleState> {
         ),
       );
     } catch (e) {
-      debugPrint('❌ Module load failed');
-      debugPrint('🔥 Error: $e');
+      debugPrint('Module load failed');
+      debugPrint(' Error: $e');
 
       emit(ModuleFailure(e.toString()));
     }

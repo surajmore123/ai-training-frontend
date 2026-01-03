@@ -7,7 +7,7 @@ import 'package:training/screens/module_screen.dart';
 
 import '../repository/process_ai_repository.dart';
 
-// Topics
+
 import 'package:training/bloc/topics/topics_bloc.dart';
 import 'package:training/bloc/topics/topics_event.dart';
 import 'package:training/bloc/topics/topics_state.dart';
@@ -24,7 +24,7 @@ class TopicsScreen extends StatelessWidget {
         appBar: AppBar(title: const Text('Generated Training Topics')),
         body: BlocBuilder<ProcessAIBloc, ProcessAIState>(
           builder: (context, aiState) {
-            // 🔥 Trigger AI processing ONCE
+      
             if (aiState is ProcessAIInitial) {
               context.read<ProcessAIBloc>().add(StartProcessAI());
               return const _LoadingView(
@@ -38,7 +38,7 @@ class TopicsScreen extends StatelessWidget {
               );
             }
 
-            // ✅ AI done → fetch topics
+       
             if (aiState is ProcessAISuccess) {
               return BlocProvider(
                 create:
@@ -125,7 +125,7 @@ class TopicsScreen extends StatelessWidget {
               );
             }
 
-            // ❌ AI failed
+
             if (aiState is ProcessAIFailure) {
               return Center(
                 child: Column(

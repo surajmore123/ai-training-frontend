@@ -18,17 +18,17 @@ class ProcessAIBloc extends Bloc<ProcessAIEvent, ProcessAIState> {
     emit(ProcessAILoading());
 
     try {
-      debugPrint('🧠 AI processing started');
+      debugPrint(' AI processing started');
 
       final msg = await repository.processAI();
 
-      debugPrint('✅ AI processing success');
-      debugPrint('📨 API Response: $msg');
+      debugPrint(' AI processing success');
+      debugPrint(' API Response: $msg');
 
       emit(ProcessAISuccess(msg));
     } catch (e) {
-      debugPrint('❌ AI processing failed');
-      debugPrint('🔥 Error: $e');
+      debugPrint(' AI processing failed');
+      debugPrint(' Error: $e');
 
       emit(ProcessAIFailure(e.toString()));
     }

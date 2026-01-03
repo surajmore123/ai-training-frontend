@@ -19,17 +19,17 @@ class TopicsBloc extends Bloc<TopicsEvent, TopicsState> {
     emit(TopicsLoading());
 
     try {
-      debugPrint('📚 Fetching topics from API');
+      debugPrint(' Fetching topics from API');
 
       final topics = await repository.fetchTopics();
 
-      debugPrint('✅ Topics fetched successfully');
-      debugPrint('📦 Topics count: ${topics.length}');
+      debugPrint('Topics fetched successfully');
+      debugPrint('Topics count: ${topics.length}');
 
       emit(TopicsLoaded(topics));
     } catch (e) {
-      debugPrint('❌ Failed to fetch topics');
-      debugPrint('🔥 Error: $e');
+      debugPrint(' Failed to fetch topics');
+      debugPrint(' Error: $e');
 
       emit(TopicsFailure(e.toString()));
     }

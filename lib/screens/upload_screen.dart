@@ -131,7 +131,7 @@ class _UploadScreenState extends State<UploadScreen> {
                   final title = titleController.text.trim();
                   final content = fileContent.trim();
 
-                  // DEBUG LOGS
+  
                   debugPrint('📄 Upload Source: FILE');
                   debugPrint('📌 Title: $title');
                   debugPrint('📝 Content length: ${content.length}');
@@ -171,7 +171,6 @@ class _UploadScreenState extends State<UploadScreen> {
                               return;
                             }
 
-                            // DEBUG LOGS
                             debugPrint('⌨️ Upload Source: MANUAL TEXT');
                             debugPrint('📌 Title: $title');
                             debugPrint('📝 Content length: ${content.length}');

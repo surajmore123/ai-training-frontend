@@ -18,25 +18,25 @@ class UploadBloc extends Bloc<UploadEvent, UploadState> {
     emit(UploadLoading());
 
     try {
-      // DEBUG: Upload started
-      debugPrint('🚀 Upload started');
-      debugPrint('📌 Title: ${event.title}');
-      debugPrint('📝 Content length: ${event.content.length}');
+     
+      debugPrint('Upload started');
+      debugPrint('Title: ${event.title}');
+      debugPrint('Content length: ${event.content.length}');
 
       final msg = await repository.uploadText(
         title: event.title,
         content: event.content,
       );
 
-      // DEBUG: API response
-      debugPrint('✅ API upload success');
-      debugPrint('📨 API Response: $msg');
+
+      debugPrint(' API upload success');
+      debugPrint(' API Response: $msg');
 
       emit(UploadSuccess(msg));
     } catch (e) {
-      // DEBUG: API failure
-      debugPrint('❌ API upload failed');
-      debugPrint('🔥 Error: $e');
+
+      debugPrint(' API upload failed');
+      debugPrint(' Error: $e');
 
       emit(UploadFailure(e.toString()));
     }
